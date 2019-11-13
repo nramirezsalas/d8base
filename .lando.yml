@@ -1,0 +1,12 @@
+name: d8base
+recipe: drupal8
+config:
+  webroot: ./web/
+  php: '7.3'
+  via: apache
+  database: mysql
+  drush: ^9
+  xdebug: false
+#services:
+#  pma:
+#    type: phpmyadmin
