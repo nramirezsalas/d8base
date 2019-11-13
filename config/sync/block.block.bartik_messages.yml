@@ -1,0 +1,22 @@
+uuid: 8e66a8fb-8a70-4f7c-ade7-8bc95a467fdc
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: bartik_messages
+theme: bartik
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Mensajes de estado'
+  provider: system
+  label_display: '0'
+visibility: {  }
