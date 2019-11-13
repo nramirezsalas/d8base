@@ -30,7 +30,7 @@
         "drupal/core": "^8.7.0",
         "drupal/draggableviews": "^1.2",
         "drupal/entity_clone": "^1.0@beta",
-        "drupal/field_group": "^1.0",
+        "drupal/field_group": "^3.0",
         "drupal/imce": "^1.7",
         "drupal/masquerade": "^2.0@beta",
         "drupal/menu_link_attributes": "^1.0",
