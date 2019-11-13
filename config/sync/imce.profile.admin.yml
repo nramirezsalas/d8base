@@ -16,6 +16,10 @@ conf:
   replace: 0
   folders:
     -
-      path: .
+      path: archivos
+      permissions:
+        all: true
+    -
+      path: 'archivos/[date:html_year]'
       permissions:
         all: true
