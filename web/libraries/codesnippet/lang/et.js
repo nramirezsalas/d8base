@@ -4,10 +4,10 @@
  */
 
 CKEDITOR.plugins.setLang( 'codesnippet', 'et', {
-	button: 'Koodijupi sisestamine',
+	button: 'Koodilõigu sisestamine',
 	codeContents: 'Koodi sisu',
-	emptySnippetError: 'Koodijupp ei saa olla tühi.',
+	emptySnippetError: 'A code snippet cannot be empty.', // MISSING
 	language: 'Keel',
-	title: 'Koodijupp',
-	pathName: 'koodijupp'
+	title: 'Koodi vidin',
+	pathName: 'code snippet' // MISSING
 } );
