@@ -25,6 +25,7 @@
         "drupal/asset_injector": "^2.4",
         "drupal/backup_migrate": "^4.0",
         "drupal/ckeditor_codemirror": "^2.2",
+        "drupal/codesnippet": "^1.6",
         "drupal/console": "^1.0.2",
         "drupal/context": "^4.0@beta",
         "drupal/core": "^8.7.0",
