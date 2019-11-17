@@ -1,0 +1,16 @@
+global-styling:
+  css:
+    theme:
+      html5/css/bootstrap.min.css: {}
+      html5/css/pqs.css: {}
+      html5/css/owl.carousel.min.css: {}
+      html5/css/owl.theme.default.min.css: {}
+      https://use/fontawesome.com/releases/v5.7.0/css/all.css: {type: external}
+  js:
+    html5/js/bootstrap.bundle.min.js: {}
+    html5/js/popper.min.js: {}
+    html5/js/owl.carousel.js: {}
+    app.js: {}
+  dependencies:
+  - core/drupal
+  - core/jquery
