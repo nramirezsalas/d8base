@@ -84,7 +84,7 @@ settings:
 image_upload:
   status: true
   scheme: public
-  directory: images
+  directory: upload-images
   max_size: ''
   max_dimensions:
     width: null

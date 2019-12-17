@@ -4,7 +4,7 @@ roles_profiles:
   authenticated:
     public: member
   administrator:
-    public: admin
+    public: member
 _core:
   default_config_hash: 4FhrEwOM9yJ8neEoN77sxroTRBUXqRwap0KSJtFnYJs
 langcode: es
