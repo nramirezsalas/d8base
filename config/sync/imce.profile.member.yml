@@ -16,19 +16,19 @@ conf:
   replace: 0
   folders:
     -
-      path: ARCHIVOS
+      path: archivos
       permissions:
         browse_files: true
         browse_subfolders: true
     -
-      path: 'ARCHIVOS/[date:custom:Y]'
+      path: 'archivos/[date:custom:Y]'
       permissions:
         browse_files: true
         browse_subfolders: true
         create_subfolders: true
         upload_files: true
     -
-      path: 'USUARIOS/[date:custom:Y]/[user:name]'
+      path: 'usuarios/[date:custom:Y]/[user:name]'
       permissions:
         browse_files: true
         browse_subfolders: true

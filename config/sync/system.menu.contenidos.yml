@@ -1,0 +1,8 @@
+uuid: bccb15c7-262b-4d9e-a03e-e72087ecfed6
+langcode: es
+status: true
+dependencies: {  }
+id: contenidos
+label: CONTENIDOS
+description: 'Menú de gestión de contenidos'
+locked: false

@@ -6,6 +6,14 @@ dependencies:
     - filter.format.full_html
   module:
     - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status: true
+    scheme: public
+    directory: files
+    extensions: 'txt pdf doc docx xls xlsx ppt pptx zip rar mp3 mp4'
+    max_size: '10 MB'
 _core:
   default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
 format: full_html
@@ -47,6 +55,7 @@ settings:
             - Blockquote
             - DrupalImage
             - ImceImage
+            - DrupalFile
             - Table
             - HorizontalRule
         -
@@ -84,8 +93,8 @@ settings:
 image_upload:
   status: true
   scheme: public
-  directory: upload-images
-  max_size: ''
+  directory: images
+  max_size: '10 MB'
   max_dimensions:
     width: null
     height: null
