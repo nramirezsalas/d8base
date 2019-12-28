@@ -1,12 +1,49 @@
 <?php
 
+  use Drupal\taxonomy\Entity;
   use Drupal\taxonomy\Entity\Term;
+  use Drupal\node\NodeInterface;
+  use Drupal\node\Entity\Node;
+  use Drupal\Core\Url;
+  use Drupal\media\Entity\Media;
+  use Drupal\image\Entity\ImageStyle;
+  use Drupal\media_entity\MediaInterface;
+  use Drupal\file\Entity\File;
 
-  // Custom template for Content Type
-  function pqs2020_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  function innova_theme_suggestions_page_alter(array &$suggestions, array $variables) {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
       $content_type = $node->bundle();
       $suggestions[] = 'page__' . $content_type;
+
+      // titulo para generar el nombre del page-template
+      $current_uri = \Drupal::request()->getRequestUri();
+      $current_uri = str_ireplace('/', '', $current_uri);
+      $current_uri = str_ireplace('-', '_', $current_uri);
+      $current_uri_pos = strpos($current_uri, '?');
+      if ($current_uri_pos > 0) {
+        $current_uri = substr($current_uri, 0, $current_uri_pos);
+        $suggestions[] = 'page__node__' . $current_uri;
+      }
+      else {
+        $suggestions[] = 'page__node__' . $current_uri;
+      }
+
+      // para crear variables del nodo en el page
+      switch ($content_type) {
+        case 'article':
+          // categoría noticia
+          $categoria_tid = $node->get('field_categoria_noticia')->target_id;
+
+          // obtener alias url de la categoría (taxonomy)
+          $options = ['absolute' => TRUE];
+          $categoria_url = \Drupal\Core\Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $categoria_tid], $options);
+          $categoria_url = $categoria_url->toString();
+
+          // set values
+          $variables['page_categoria_url'] = $categoria_url;
+          break;
+      }
+
     }
     if (\Drupal::routeMatch()
         ->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()
@@ -17,15 +54,16 @@
     }
   }
 
-  // Custom template for Type Block
-  function pqs2020_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  function innova_theme_suggestions_block_alter(array &$suggestions, array $variables) {
     if (isset($variables['elements']['content']['#block_content'])) {
-      array_splice($suggestions, 1, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle() . '__' . $variables['elements']['content']['#block_content']->id());
+      $info = strtolower($variables['elements']['content']['#block_content']->get('info')->value);
+      $info = cleanString($info);
+      array_splice($suggestions, 1, 0, 'block__' . $info);
       array_splice($suggestions, 1, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
     }
   }
 
-  function pqs2020_theme_suggestions_alter(array &$suggestions, array $variables) {
+  function innova_theme_suggestions_alter(array &$suggestions, array $variables) {
     if (isset($variables['element']) && isset($variables['element']['#type']) && $variables['element']['#type'] == 'form') {
       $original_theme_hook = $variables['theme_hook_original'];
       $suggestions[] = $original_theme_hook . '__' . str_replace('-', '_', $variables['element']['#id']);
@@ -33,55 +71,15 @@
     return $suggestions;
   }
 
-  /**
-   * Implements hook_preprocess_HOOK().
-   */
-  function pqs2020_preprocess_block(&$variables) {
-    $uuid = $variables['derivative_plugin_id'];
-
-    if ($uuid) {
-      // load the block using the UUID
-      $block = \Drupal::service('entity.repository')
-        ->loadEntityByUuid('block_content', $uuid);
-
-      if ($block) {
-        $block_type = $block->bundle();
-
-        /*if ($block_type == 'container') {
-          //$variables['body'] = $block->get('body')->value;
-          $entity = $block->get('field_icono')->entity;
-          if ($entity) {
-           $img = file_create_url($entity->getFileUri());
-           $variables['background'] = 'background-image: url("' . $img . '")';
-          }
-          else {
-           $variables['background'] = 'background-color: #EEE';
-          }
-        }*/
-        /*if ($block_type == 'titulo_pagina') {
-          $variables['background'] = 'background-color:#' . $block->get('field_color_fondo')->value;
-          $variables['codeTitulo'] = $block->get('field_aplicar_tag_h2')->value;
-        }*/
-
-      }
+  function innova_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+    $paragraph = $variables['elements']['#paragraph'];
+    $parent = $paragraph->getParentEntity();
+    if ($parent) {
+      $suggestions[] = 'paragraph__' . $parent->bundle() . '__' . $paragraph->bundle();
     }
   }
 
-  /**
-   * Pre process page
-   */
-  function pqs2020_preprocess_page(&$variables) {
-    // Para mostrar campos Taxonomy en Page
-    if (\Drupal::routeMatch()
-        ->getRouteName() == 'entity.taxonomy_term.canonical'
-    ) {
-      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
-      $variables['term'] = $term;
-    }
-  }
-
-
-  function pqs2020_preprocess_html(&$variables) {
+  function innova_preprocess_html(&$variables) {
     if ($node = \Drupal::request()->attributes->get('node')) {
       $variables['attributes']['class'][] = 'page-node-' . $node->id();
     }
@@ -90,14 +88,393 @@
       ->getAliasByPath($current_path);
   }
 
+  function innova_preprocess_page(&$variables) {
 
-  /**
-   * Implements hook_theme_suggestions_HOOK_alter().
-   */
-  function pqs2020_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
-    $paragraph = $variables['elements']['#paragraph'];
-    $parent = $paragraph->getParentEntity();
-    if ($parent) {
-      $suggestions[] = 'paragraph__' . $parent->bundle() . '__' . $paragraph->bundle();
+    // Para mostrar campos Taxonomy en Page
+    if (\Drupal::routeMatch()
+        ->getRouteName() == 'entity.taxonomy_term.canonical') {
+      $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+      $variables['term'] = $term;
+
+      // cargar data de la categoría
+      $vocabulary = $term->bundle();
+
+      switch ($vocabulary) {
+        case 'tags':
+          break;
+        case 'c':
+          // fondo cabecera
+          $term_image = $term->get('field_fondo_cabecera')->entity;
+          if ($term_image) {
+            $term_image = file_create_url($term_image->getFileUri());
+            $variables['term_image'] = $term_image;
+          }
+          else {
+            $variables['term_image'] = '';
+          }
+          break;
+      }
+
+
     }
+  }
+
+  function innova_preprocess_node(&$variables) {
+    $node = $variables['node'];
+    $node_id = $node->id();
+    $bundle = $node->bundle();
+    $variables['node_id'] = $node_id;
+
+    switch ($bundle) {
+      case 'article':
+        // categoría noticia
+        $categoria_tid = $node->get('field_categoria_noticia')->target_id;
+
+        // cargar data de la categoría
+        $categoria = Term::load($categoria_tid);
+        $categoria_name = $categoria->getName();
+        //$categoria_class = $categoria->getDescription();
+        $categoria_b_color = $categoria->get('field_b_color')->value;
+        $categoria_e_color = $categoria->get('field_e_color')->value;
+
+        // obtener alias url de la categoría (taxonomy)
+        $options = ['absolute' => TRUE];
+        $categoria_url = \Drupal\Core\Url::fromRoute('entity.taxonomy_term.canonical', ['taxonomy_term' => $categoria_tid], $options);
+        $categoria_url = $categoria_url->toString();
+
+        // uri de imagen o default imagen
+        $uri = _get_file_field_uri($node, 'field_image');
+
+        // tipo de noticia
+        $noticia_tipo = $node->get('field_tipo_noticia')->target_id;
+
+        // set values
+        $variables['categoria_name'] = $categoria_name;
+        $variables['categoria_b_color'] = $categoria_b_color;
+        $variables['categoria_e_color'] = $categoria_e_color;
+        $variables['categoria_url'] = $categoria_url;
+        $variables['categoria_tid'] = $categoria_tid;
+        $variables['noticia_imagen'] = $uri;
+        $variables['noticia_tipo'] = $noticia_tipo;
+        break;
+
+      case 'c_propuesta':
+      case 'c_beneficio':
+      case 'c_desarrollo':
+      case 'c__politica':
+        $es_padre = $node->get('field_mostrar_video')->value;
+        $variables['es_padre'] = $es_padre;
+        break;
+
+      case 'item_contenido':
+        // referencia padre
+        $padre_tid = $node->get('field_referencia_padre')->target_id;
+
+        // cargar nodo
+        $node = Node::load($padre_tid);
+        $type = $node->getType();     // type
+
+        // set values
+        $variables['node_type'] = $type;
+
+        break;
+
+      case 'plataforma_digital':
+        // sigla minuscula
+        $sigla = strtolower($node->get('field_sigla_abreviatura')->value);
+        $variables['sigla_plataforma'] = $sigla;
+
+        // fondo cabecera
+        $node_image = $node->get('field_image')->entity;
+        if ($node_image) {
+          $node_image = file_create_url($node_image->getFileUri());
+          $variables['node_image'] = $node_image;
+        }
+        break;
+
+      case 'c__qa':
+        // fondo cabecera
+        $node_image = $node->get('field_imagen')->entity;
+        if ($node_image) {
+          $node_image = file_create_url($node_image->getFileUri());
+          $variables['node_image'] = $node_image;
+        }
+        break;
+    }
+
+  }
+
+  function innova_preprocess_block(&$variables) {
+    $uuid = $variables['derivative_plugin_id'];
+
+    if ($uuid) {
+      $block = \Drupal::service('entity.repository')
+        ->loadEntityByUuid('block_content', $uuid);
+
+      if ($block) {
+        $block_type = $block->bundle();
+
+        if ($block_type == 'banner_fondo') {
+          //$variables['body'] = $block->get('body')->value;
+          $image = $block->get('field_imagen_fondo')->entity;
+          if ($image) {
+            $img = file_create_url($image->getFileUri());
+            $variables['background'] = 'background: url("' . $img . '")';
+            $variables['image'] = $img;
+          }
+          else {
+            $variables['background'] = '';
+            $variables['image'] = '';
+          }
+        }
+
+      }
+    }
+  }
+
+
+  // funciones personalizadas
+  function _get_file_field_uri($entity, $fieldName) {
+    $image_uri = NULL;
+    if ($entity->hasField($fieldName)) {
+      // Try loading from field values first.
+      try {
+        $field = $entity->{$fieldName};
+        if ($field && $field->target_id) {
+          $file = File::load($field->target_id);
+          if ($file) {
+            $image_uri = $file->getFileUri();
+          }
+        }
+      }
+      catch (\Exception $e) {
+        \Drupal::logger('get_image_uri')->notice($e->getMessage(), []);
+      }
+      // If a set value above wasn't found, try the default image.
+      if (is_null($image_uri)) {
+        try {
+          $field = $entity->get($fieldName);
+          if ($field) {
+            $default_image = $field->getSetting('default_image');
+            if ($default_image && $default_image['uuid']) {
+              $entity_repository = Drupal::service('entity.repository');
+              /** @var $defaultImageFile File */
+              $defaultImageFile = $entity_repository->loadEntityByUuid('file', $default_image['uuid']);
+              if ($defaultImageFile) {
+                $image_uri = $defaultImageFile->getFileUri();
+              }
+            }
+          }
+        }
+        catch (\Exception $e) {
+          \Drupal::logger('get_image_uri')->notice($e->getMessage(), []);
+        }
+      }
+    }
+    return $image_uri;
+  }
+
+  function cleanString($string) {
+    $replace = [
+      '&lt;' => '',
+      '&gt;' => '',
+      '&#039;' => '',
+      '&amp;' => '',
+      '&quot;' => '',
+      'À' => 'A',
+      'Á' => 'A',
+      'Â' => 'A',
+      'Ã' => 'A',
+      'Ä' => 'Ae',
+      '&Auml;' => 'A',
+      'Å' => 'A',
+      'Ā' => 'A',
+      'Ą' => 'A',
+      'Ă' => 'A',
+      'Æ' => 'Ae',
+      'Ç' => 'C',
+      'Ć' => 'C',
+      'Č' => 'C',
+      'Ĉ' => 'C',
+      'Ċ' => 'C',
+      'Ď' => 'D',
+      'Đ' => 'D',
+      'Ð' => 'D',
+      'È' => 'E',
+      'É' => 'E',
+      'Ê' => 'E',
+      'Ë' => 'E',
+      'Ē' => 'E',
+      'Ę' => 'E',
+      'Ě' => 'E',
+      'Ĕ' => 'E',
+      'Ė' => 'E',
+      'Ĝ' => 'G',
+      'Ğ' => 'G',
+      'Ġ' => 'G',
+      'Ģ' => 'G',
+      'Ĥ' => 'H',
+      'Ħ' => 'H',
+      'Ì' => 'I',
+      'Í' => 'I',
+      'Î' => 'I',
+      'Ï' => 'I',
+      'Ī' => 'I',
+      'Ĩ' => 'I',
+      'Ĭ' => 'I',
+      'Į' => 'I',
+      'İ' => 'I',
+      'Ĳ' => 'IJ',
+      'Ĵ' => 'J',
+      'Ķ' => 'K',
+      'Ł' => 'K',
+      'Ľ' => 'K',
+      'Ĺ' => 'K',
+      'Ļ' => 'K',
+      'Ŀ' => 'K',
+      'Ñ' => 'N',
+      'Ń' => 'N',
+      'Ň' => 'N',
+      'Ņ' => 'N',
+      'Ŋ' => 'N',
+      'Ò' => 'O',
+      'Ó' => 'O',
+      'Ô' => 'O',
+      'Õ' => 'O',
+      'Ö' => 'Oe',
+      '&Ouml;' => 'Oe',
+      'Ø' => 'O',
+      'Ō' => 'O',
+      'Ő' => 'O',
+      'Ŏ' => 'O',
+      'Œ' => 'OE',
+      'Ŕ' => 'R',
+      'Ř' => 'R',
+      'Ŗ' => 'R',
+      'Ś' => 'S',
+      'Š' => 'S',
+      'Ş' => 'S',
+      'Ŝ' => 'S',
+      'Ș' => 'S',
+      'Ť' => 'T',
+      'Ţ' => 'T',
+      'Ŧ' => 'T',
+      'Ț' => 'T',
+      'Ù' => 'U',
+      'Ú' => 'U',
+      'Û' => 'U',
+      'Ü' => 'Ue',
+      'Ū' => 'U',
+      '&Uuml;' => 'Ue',
+      'Ů' => 'U',
+      'Ű' => 'U',
+      'Ŭ' => 'U',
+      'Ũ' => 'U',
+      'Ų' => 'U',
+      'Ŵ' => 'W',
+      'Ý' => 'Y',
+      'Ŷ' => 'Y',
+      'Ÿ' => 'Y',
+      'Ź' => 'Z',
+      'Ž' => 'Z',
+      'Ż' => 'Z',
+      'Þ' => 'T',
+      'à' => 'a',
+      'á' => 'a',
+      'â' => 'a',
+      'ã' => 'a',
+      'ä' => 'ae',
+      '&auml;' => 'ae',
+      'å' => 'a',
+      'ā' => 'a',
+      'ą' => 'a',
+      'ă' => 'a',
+      'æ' => 'ae',
+      'ç' => 'c',
+      'ć' => 'c',
+      'č' => 'c',
+      'ĉ' => 'c',
+      'ċ' => 'c',
+      'ď' => 'd',
+      'đ' => 'd',
+      'ð' => 'd',
+      'è' => 'e',
+      'é' => 'e',
+      'ê' => 'e',
+      'ë' => 'e',
+      'ē' => 'e',
+      'ę' => 'e',
+      'ě' => 'e',
+      'ĕ' => 'e',
+      'ė' => 'e',
+      'ƒ' => 'f',
+      'ĝ' => 'g',
+      'ğ' => 'g',
+      'ġ' => 'g',
+      'ģ' => 'g',
+      'ĥ' => 'h',
+      'ħ' => 'h',
+      'ì' => 'i',
+      'í' => 'i',
+      'î' => 'i',
+      'ï' => 'i',
+      'ī' => 'i',
+      'ĩ' => 'i',
+      'ĭ' => 'i',
+      'į' => 'i',
+      'ı' => 'i',
+      'ĳ' => 'ij',
+      'ĵ' => 'j',
+      'ķ' => 'k',
+      'ĸ' => 'k',
+      'ł' => 'l',
+      'ľ' => 'l',
+      'ĺ' => 'l',
+      'ļ' => 'l',
+      'ŀ' => 'l',
+      'ñ' => 'n',
+      'ń' => 'n',
+      'ň' => 'n',
+      'ņ' => 'n',
+      'ŉ' => 'n',
+      'ŋ' => 'n',
+      'ò' => 'o',
+      'ó' => 'o',
+      'ô' => 'o',
+      'õ' => 'o',
+      'ö' => 'oe',
+      '&ouml;' => 'oe',
+      'ø' => 'o',
+      'ō' => 'o',
+      'ő' => 'o',
+      'ŏ' => 'o',
+      'œ' => 'oe',
+      'ŕ' => 'r',
+      'ř' => 'r',
+      'ŗ' => 'r',
+      'š' => 's',
+      'ù' => 'u',
+      'ú' => 'u',
+      'û' => 'u',
+      'ü' => 'ue',
+      'ū' => 'u',
+      '&uuml;' => 'ue',
+      'ů' => 'u',
+      'ű' => 'u',
+      'ŭ' => 'u',
+      'ũ' => 'u',
+      'ų' => 'u',
+      'ŵ' => 'w',
+      'ý' => 'y',
+      'ÿ' => 'y',
+      'ŷ' => 'y',
+      'ž' => 'z',
+      'ż' => 'z',
+      'ź' => 'z',
+    ];
+    $string = str_ireplace(' ', '_', $string); // borra espacios en blanco
+    $string = str_replace(array_keys($replace), $replace, $string); // matriz que reemplaza caracteres extraños
+    //$string = str_replace(' ', '_', $string); // Replaces all spaces with hyphens.
+    //return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    return $string;
   }
