@@ -25,6 +25,7 @@
         "drupal/asset_injector": "^2.4",
         "drupal/backup_migrate": "^4.0",
         "drupal/bootstrap": "^3.20",
+        "drupal/captcha": "^1.0@beta",
         "drupal/ckeditor_codemirror": "^2.2",
         "drupal/codesnippet": "^1.6",
         "drupal/config_ignore": "^2.1",
