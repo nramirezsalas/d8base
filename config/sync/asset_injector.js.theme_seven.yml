@@ -1,0 +1,21 @@
+uuid: 1e2a1cab-312a-4d51-834f-3858050e8589
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+id: theme_seven
+label: 'theme - seven'
+code: "(function ($) {\r\n  'use strict';\r\n  Drupal.behaviors.webformX = {\r\n    attach: function (context, settings) {\r\n      if (typeof CKEDITOR !== \"undefined\") {\r\n        CKEDITOR.dtd.$removeEmpty['i'] = false;\r\n        CKEDITOR.dtd.$removeEmpty['span'] = false;\r\n        //console.log(CKEDITOR.dtd);\r\n      }\r\n    }\r\n  };\r\n}(jQuery));"
+noscript: ''
+noscriptRegion: {  }
+jquery: false
+header: false
+preprocess: true
+conditions:
+  current_theme:
+    id: current_theme
+    theme:
+      seven: seven
+    negate: false
+conditions_require_all: true
