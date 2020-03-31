@@ -8,8 +8,10 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  captcha: 0
   ckeditor: 0
   ckeditor_codemirror: 0
+  cleaner: 0
   color: 0
   comment: 0
   config: 0
@@ -56,6 +58,7 @@ module:
   quickedit: 0
   rdf: 0
   rebuild_cache_access: 0
+  recaptcha: 0
   search: 0
   shortcut: 0
   system: 0
@@ -85,6 +88,7 @@ theme:
   classy: 0
   bartik: 0
   seven: 0
+  ceresita: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
