@@ -54,10 +54,10 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ anterior'
-            next: 'siguiente ›'
-            first: '« primero'
-            last: 'última »'
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'

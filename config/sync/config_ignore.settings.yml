@@ -1,9 +1,0 @@
-ignored_config_entities:
-  - system.site
-  - 'block.block.*'
-  - 'context.context.*'
-  - recaptcha.settings
-  - db_maintenance.settings
-_core:
-  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
-langcode: es
