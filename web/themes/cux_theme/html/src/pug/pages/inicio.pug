@@ -1,0 +1,119 @@
+extends ./../templates/template.pug
+append css
+  link(rel="stylesheet", href="./../css/c-header.css")
+  link(rel="stylesheet", href="./../css/c-hero.css")
+  link(rel="stylesheet", href="./../css/c-higiene.css")
+  link(rel="stylesheet", href="./../css/c-ultimas-notas.css")
+  link(rel="stylesheet", href="./../css/c-certificaciones.css")
+  link(rel="stylesheet", href="./../css/c-clientes.css")
+
+append main
+  // hero
+  section.c-hero.position-relative.overflow-hidden.page-home
+    .container-fluid.h-100
+      .row.h-100
+        div.col-md-6.d-flex.align-items-center.justify-content-end.pl-0.pr-0
+          .c-hero__imagen-bacteria
+            img.fondo(src="./../img/home/imagen-bacterias.png", alt="" title="")
+            .c-hero__imagen-maquina
+              img(src="./../img/home/maquina.png", alt="maquina" title="superficies y ambientes")
+
+        div.col-md-6.d-md-flex.align-items-center.flex-direction-column.c-hero__contenedor-texto
+          div.c-hero__texto
+            p.mb-0: span 99 TECHNOLOGIES 3
+            h2 Desinfección de superficies y ambientes
+            p Es un sistema para el tratamiento de la superficie, el aire y el ambiente, que permite la descontaminación, la desinfección y el mantenimiento de la higuiene.
+            p.mb-0.pb-0
+              a.botones.--verde(href="") Consulta al Whatsapp
+          div.c-hero__imagen-maquina-doble
+            img(src="./../img/home/maquina.png", alt="maquina" title="superficies y ambientes")
+
+  // higiene
+  section.c-higiene.container.pt-100.pb-100
+    div.row
+      div.col-md-6.d-md-flex.flex-column.justify-content-center
+        div.c-higiene__texto
+          h2 En Sanitech nos tomamos muy en serio la desinfección y la higiene
+          p Historia de sanitech y 99 technologies Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatem unde, expedita natus, nulla rem Lorem ipsum dolor sit, amet adipisicing elit.Voluptatem unde, expedita
+          p Voluptatem unde, expedita natus, nulla rem minima facere rerum, doloribus et tempore architecto nesciunt blanditiis optio nam adipisicing elit.Voluptatem unde, expedita
+        div.c-higiene__raya
+
+      div.col-md-6
+        div.chigiene__imagen
+          img.img-fluid(src="./../img/home/maquina-laser.png", alt="")
+
+  // banner azul
+  .banner-azul
+
+  // últimas notas
+  section.c-ultimas-notas.pt-50.pb-50
+    .container
+      div.c-titulos.text-center: h2 Últimas notas
+      .row
+        .d-md-flex
+          article.notas-article.col-12.col-md-4
+            img(src="https://i.picsum.photos/id/29/500/400.jpg", alt="").img-fluid.mb-3
+            h3 Espacios saludables para todos en cada rincón de la ciudad
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae perspiciatis quam in sint quod quidem vero maiores magnam sed ullam!
+            div.text-right
+              a(href="#").stretched-link.botones.--leer-mas.text-uppercase leer más
+          article.notas-article.col-12.col-md-4
+            img(src="https://i.picsum.photos/id/29/500/400.jpg", alt="").img-fluid.mb-3
+            h3 Espacios saludables para todos en cada rincón de la ciudad
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae perspiciatis quam in sint quod quidem vero maiores magnam sed ullam!
+            div.text-right
+              a(href="#").stretched-link.botones.--leer-mas.text-uppercase leer más
+
+          article.notas-article.col-12.col-md-4
+            img(src="https://i.picsum.photos/id/29/500/400.jpg", alt="").img-fluid.mb-3
+            h3 Espacios saludables para todos en cada rincón de la ciudad
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae perspiciatis quam in sint quod quidem vero maiores magnam sed ullam!
+            div.text-right
+              a(href="#").stretched-link.botones.--leer-mas.text-uppercase leer más
+
+  // banner azul
+  .banner-azul
+
+  // certificaciones
+  section.c-certificaciones.pt-50.pb-50
+    div.c-titulos
+      h2.text-center.col-12 Certificaciones
+      p.text-center Contamos con los estándares más óptimos
+    div.container: .row
+      div.col-6.col-md-4.col-lg-2.certificaciones-izquierda
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+      div.col-6.col-md-4.col-lg-2.certificaciones-derecha
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+      div.col-6.col-md-4.col-lg-2.certificaciones-izquierda
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+      div.col-6.col-md-4.col-lg-2.certificaciones-derecha
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+      div.col-6.col-md-4.col-lg-2.certificaciones-izquierda
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+      div.col-6.col-md-4.col-lg-2.certificaciones-derecha
+        img.img-fluid(src="https://i.picsum.photos/id/2/480/480.jpg", alt="")
+
+  // clientes
+  section.c-clientes.pt-50.pb-50
+    div.c-titulos
+      h2.text-center.col-12 Nuestros Clientes
+      p.text-center Ellos confian en nuestro trabajo
+    div.container
+      #carouselClientes.row
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")
+        div.col-12.col-md-6.col-lg-3.item
+          img.img-fluid(src="https://i.picsum.photos/id/16/768/500.jpg", alt="")

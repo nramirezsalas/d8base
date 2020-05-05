@@ -1,0 +1,13 @@
+global-styling:
+  css:
+    theme:
+      html/public/css/libraries.min.css: {}
+      html/public/css/app.min.css: {}
+      app.css: {}
+  js:
+    html/public/js/libraries.min.js: {}
+    html/public/js/app.min.js: {}
+    app.js: {}
+  dependencies:
+  - core/drupal
+  - core/jquery

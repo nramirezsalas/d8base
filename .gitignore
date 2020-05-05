@@ -19,7 +19,6 @@
 /sites/*/settings.local.php
 /sites/*/files/
 /sites/simpletest
-/.idea/
 
 
 # Ignore others files

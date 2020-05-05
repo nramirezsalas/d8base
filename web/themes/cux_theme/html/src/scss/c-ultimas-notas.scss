@@ -1,0 +1,25 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+
+// ULTIMAS NOTAS
+.c-ultimas-notas {
+  background: $fondo-clientes;
+}
+
+.notas-article {
+  position: relative;
+
+  h3 {
+    color         : $color-azul-claro;
+    font-size     : 20px;
+    font-weight   : bold;
+    line-height   : 24px;
+    letter-spacing: 0.1px;
+  }
+
+  p {
+    font-size  : 14px;
+    line-height: 20px;
+    color      : $color-titulo;
+  }
+}

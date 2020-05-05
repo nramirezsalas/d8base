@@ -1,0 +1,57 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+// fuentes
+@import url('https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap');
+
+body {
+  font-family   : 'Muli', sans-serif;
+  font-size     : 1rem;
+  font-weight   : normal;
+  line-height   : 22px;
+  letter-spacing: 0.2px;
+  color         : $color-parrafo;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color      : $color-titulo;
+}
+
+.banner-azul {
+  background           : url(./../img/home/imagen-azul.jpg);
+  height               : 355px;
+  background-attachment: fixed;
+
+  /* background-size      : cover; */
+  @include mobile {
+    height: 300px;
+  }
+
+  img {
+    object-fit: cover;
+    width     : 100%;
+    height    : 100%;
+  }
+}
+
+.pt-100 {
+  padding-top: 100px
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}

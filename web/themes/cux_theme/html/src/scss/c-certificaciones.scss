@@ -1,0 +1,40 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+
+.c-certificaciones {
+
+  .c-titulos {
+    p {
+      font-size  : 14px;
+      line-height: 20px;
+      color      : $color-titulo;
+    }
+  }
+
+  .certificaciones-izquierda {
+    @include mobile {
+      padding-right: 7.5px;
+    }
+  }
+
+  .certificaciones-derecha {
+    @include mobile {
+      padding-left: 7.5px;
+    }
+  }
+
+
+  img {
+    padding-bottom: 15px;
+
+    @include tablet_only {
+      padding-bottom: 30px
+    }
+
+    @include pc {
+      padding-bottom: opx;
+    }
+  }
+
+
+}

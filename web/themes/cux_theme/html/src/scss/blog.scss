@@ -1,0 +1,17 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+
+
+.c-higiene {
+  .c-higiene__raya {
+    @include tablet {
+      // margin-right: 71%;
+    }
+  }
+}
+
+.notas-article {
+  @include tablet {
+    margin-bottom: 50px;
+  }
+}

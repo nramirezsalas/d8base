@@ -1,0 +1,55 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+
+.c-higiene-producto {
+  padding-top   : 70px;
+  padding-bottom: 100px;
+
+  @include mobile {
+    padding-top: 0px;
+
+  }
+}
+
+.c-productos-container article {
+  margin-bottom: 30px;
+
+  @include mobile {
+    margin-bottom: 15px;
+  }
+}
+
+.productos {
+  background: #071d4b;
+  height    : 300px;
+  padding   : 0;
+  overflow  : hidden;
+
+  &:hover img {
+    transform : scale(1.1);
+    transition: all 0.5s;
+  }
+
+  img {
+    opacity   : .43;
+    object-fit: cover;
+    width     : 100%;
+    height    : 100%;
+    transition: all 0.5s;
+  }
+
+  .titulo-productos {
+    top: 0;
+
+    h3 {
+      text-align : center;
+      color      : white;
+      font-size  : 24px;
+      line-height: 75px;
+
+      a {
+        color: white;
+      }
+    }
+  }
+}

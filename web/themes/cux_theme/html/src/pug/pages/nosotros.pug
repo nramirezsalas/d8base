@@ -1,0 +1,91 @@
+extends ./../templates/template.pug
+append css
+  link(rel="stylesheet", href="./../css/c-ultimas-notas.css")
+  link(rel="stylesheet", href="./../css/c-higiene.css")
+  link(rel="stylesheet", href="./../css/blog-interna.css")
+  link(rel="stylesheet", href="./../css/c-certificaciones.css")
+  link(rel="stylesheet", href="./../css/nosotros.css")
+
+append main
+  // content
+  //- BANNER
+  section.c-banner-titulo.position-relative
+    .img-fondo.h-100
+      img(src="../img/blog/image-blog.jpg", alt="img")
+    .position-absolute.titulo.d-flex.align-items-center.w-100.h-100
+      .container
+        h1.text-center SOMOS SANITECH
+  //- NUESTRO PROPOSITO
+  .c-higiene.container.pb-50.pt-50
+    div.row
+      div.col-md-7.d-md-flex.flex-column.justify-content-center
+        div.c-higiene__texto
+          h2 Nuestro propósito
+          p Historia de sanitech y 99 technologies Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatem unde, expedita natus, nulla rem Lorem ipsum dolor sit, amet adipisicing elit.Voluptatem unde, expedita
+          p Voluptatem unde, expedita natus, nulla rem minima facere rerum, doloribus et tempore architecto nesciunt blanditiis optio nam adipisicing elit.Voluptatem unde, expedita
+        div.c-higiene__raya
+      div.col-md-5
+        div
+          img.img-fluid(src="./../img/home/maquina-laser.png", alt="")
+
+  //- SOBRE NOSOTROS
+  div.container.pt-50
+    div.row
+      div.offset-lg-2.col-lg-8
+        div.c-titulos
+          h2.text-center.col-12.--titulo-36 Sobre nosotros
+        p Historia de sanitech y 99 technologies Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam alias eaque ipsam, officia praesentium doloremque dolores architecto id nisi sit. Fuga placeat necessitatibus ex assumenda explicabo. Accusamus laboriosam assumenda vitae.
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum impedit dolor, officiis iste numquam quo consequuntur provident ad quas, pariatur quod.psum dolor sit amet consectetur.
+        img.img-fluid.pt-5(src="https://i.picsum.photos/id/29/800/500.jpg", alt="")
+
+  //- CERTIFICACIONES
+  section.c-certificaciones.pt-50
+      div.c-titulos
+        h2.text-center.col-12 Certificaciones
+        p.text-center Contamos con los estándares más óptimos
+      div.container: .row
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+        div.col-6.col-md-4.col-lg-2
+          img.img-fluid(src="./../img/home/lapto.jpg", alt="")
+
+  //- Nuestro Equipo
+  section.pt-50
+    div.c-titulos
+      h2.text-center.col-12 Nuestro equipo
+    .container: .row
+        .c-higiene.col-md-4.py-0
+          .c-equipos
+            img(src="https://i.picsum.photos/id/29/220/220.jpg", alt="").img-fluid
+            div
+              h3 Nuestro propósito
+              span.font-weight-bold CEO ipsum dolor sit.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quae. Consectetur architecto vero minima placeat.
+              div.c-higiene__raya.--mini-raya
+
+        .c-higiene.col-md-4.py-0
+          .c-equipos
+            img(src="https://i.picsum.photos/id/29/220/220.jpg", alt="").img-fluid
+            div
+              h3 Nuestro propósito
+              span.font-weight-bold CEO ipsum dolor sit.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quae. Consectetur architecto vero minima placeat.
+              div.c-higiene__raya.--mini-raya
+
+        .c-higiene.col-md-4.py-0
+          .c-equipos
+            img(src="https://i.picsum.photos/id/29/220/220.jpg", alt="").img-fluid
+            div
+              h3 Nuestro propósito
+              span.font-weight-bold CEO ipsum dolor sit.
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, quae. Consectetur architecto vero minima placeat.
+              div.c-higiene__raya.--mini-raya
+

@@ -1,0 +1,102 @@
+extends ./../templates/template.pug
+append css
+  //- link(rel="stylesheet", href="./../css/nosotros.css")
+  //- link(rel="stylesheet", href="./../css/c-higiene.css")
+  //- link(rel="stylesheet", href="./../css/blog.css")
+  link(rel="stylesheet", href="./../css/producto-interna.css")
+  link(rel="stylesheet", href="./../css/contactanos.css")
+
+append main
+  //- BANNER
+  section.c-banner-titulo.position-relative
+    .img-fondo.h-100
+      img(src="img/productos/image-producto1.png", alt="img")
+    .position-absolute.titulo.d-flex.align-items-center.w-100.h-100
+      .container
+        h1.text-center Modulators Micro - Nebulizers
+
+  .container-fuid
+    a(href="#").boton-whatsapp
+      i.fab.fa-whatsapp
+      div.texto
+        strong SOLICITA
+        span  uno ahora
+
+
+  .container
+    p.offset-lg-2.col-lg-8.text-center.parrafo-producto Este es un sistema para el tratamiento de la superficie, el aire y el ambiente, que permite la descontaminación, la desinfección y el mantenimiento de la higiene.
+
+  //- Modelos y Tipos
+  section
+    .container
+      .row
+        div.c-titulos.col-12
+            h2.text-center Modelos / Tipos
+
+    .container.--productos
+      //- ARTICULOS DE PRODUCTOS
+      .row.c-productos
+        div.col-12.col-md-5.col-lg-4
+          img(src="img/productos/producto 1.png", alt="").img-fluid
+        div.col-12.col-md-7.col-lg-8
+          h3 The All New
+          p Metal components Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, deserunt dicta ab labore asperiores illum consectetur numquam placeat eos rem cumque tempore, assumenda laborum sunt ipsam distinctio dolor sequi voluptatem? Aliquam aliquid hic similique? Ipsa aliquid minima quas inventore, earum exercitationem illo in non suscipit praesentium officiis animi ut dolor voluptate est.
+          ul.list-producto
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+
+          div.botones-producto
+            a(href="#").botones.--solicitud SOLICITAR
+            a(href="#").botones.--info MÁS INFO
+      //- ARTICULOS DE PRODUCTOS
+      .row.c-productos
+        div.col-12.col-md-5.col-lg-4
+          img(src="img/productos/producto 1.png", alt="").img-fluid
+        div.col-12.col-md-7.col-lg-8
+          h3 The All New
+          p Metal components Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, deserunt dicta ab labore asperiores illum consectetur numquam placeat eos rem cumque tempore, assumenda laborum sunt ipsam distinctio dolor sequi voluptatem? Aliquam aliquid hic similique? Ipsa aliquid minima quas inventore, earum exercitationem illo in non suscipit praesentium officiis animi ut dolor voluptate est.
+          ul.list-producto
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+
+          div.botones-producto
+            a(href="#").botones.--solicitud SOLICITAR
+            a(href="#").botones.--info MÁS INFO
+      //- ARTICULOS DE PRODUCTOS
+      .row.c-productos
+        div.col-12.col-md-5.col-lg-4
+          img(src="img/productos/producto 1.png", alt="").img-fluid
+        div.col-12.col-md-7.col-lg-8
+          h3 The All New
+          p Metal components Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, deserunt dicta ab labore asperiores illum consectetur numquam placeat eos rem cumque tempore, assumenda laborum sunt ipsam distinctio dolor sequi voluptatem? Aliquam aliquid hic similique? Ipsa aliquid minima quas inventore, earum exercitationem illo in non suscipit praesentium officiis animi ut dolor voluptate est.
+          ul.list-producto
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+            li - Lorem ipsum dolor sit.
+
+          div.botones-producto
+            a(href="#").botones.--solicitud SOLICITAR
+            a(href="#").botones.--info MÁS INFO
+  div.c-contactanos
+    div.c-contactanos__portada
+      h2.c-contactanos__titulo.text-center Contactanos
+      div.offset-md-3.col-md-6.offset-lg-4.col-lg-4
+        form(action="")
+          div.form-item
+            input.form-control(type="text" name="nombre" required placeholder="Nombre")
+          div.form-item
+            input.form-control(type="text" name="Email" required placeholder="Email")
+          div.form-item
+            input.form-control(type="text" name="telefono" required placeholder="Teléfono")
+          div.form-item.textarea
+            textarea.form-control(rows="8" name="mensaje" placeholder="Quiero saber mas sobre...")
+          div.form-item
+            input.form-submit.btn-block.text-uppercase(type="submit")

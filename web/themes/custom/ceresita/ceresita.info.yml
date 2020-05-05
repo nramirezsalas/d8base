@@ -1,9 +1,0 @@
-core: 8.x
-type: theme
-base theme: bartik
-
-name: 'Ceresita Codelpa'
-description: 'Theme custom bootstrap'
-
-libraries:
-  - 'ceresita/global-styling'

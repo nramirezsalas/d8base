@@ -1,0 +1,75 @@
+@import 'colores.scss';
+@import 'mixin.scss';
+
+.botones {
+  color           : white;
+  background-color: $color-azul-claro;
+  font-size       : 14px;
+  font-weight     : bold;
+  border          : none;
+  padding         : 8px 25px;
+  border-radius   : 30px;
+  letter-spacing  : 0.3px;
+  display         : inline-block;
+
+
+  &.--leer-mas {
+    font-size  : 12px;
+    line-height: 18px;
+
+    @include mobile {
+      margin-bottom: 40px;
+      display      : inline-block;
+    }
+  }
+
+  &.--verde {
+    background: $color-btn-verde;
+    color     : $color-menu-negro;
+
+    &:hover {
+      background: $color-azul-claro;
+      color     : white;
+    }
+  }
+
+  &:hover {
+    background     : $color-btn-verde;
+    color          : $color-menu-negro;
+    text-decoration: none;
+    @include transition;
+  }
+}
+
+.--solicitud {
+  border-radius: 0;
+  border       : 1px solid $color-azul-claro;
+  padding      : 10px 65px;
+
+
+  @include tablet {
+    padding: 10px 40px;
+
+  }
+
+  &:hover {
+    border: 1px solid $color-btn-verde;
+  }
+}
+
+.--info {
+  color        : $color-azul-claro;
+  border       : 1px solid $color-azul-claro;
+  background   : white;
+  border-radius: 0;
+  padding      : 10px 65px;
+
+  @include tablet {
+    padding: 10px 40px;
+
+  }
+
+  &:hover {
+    border: 1px solid $color-btn-verde;
+  }
+}

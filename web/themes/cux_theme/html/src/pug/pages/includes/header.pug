@@ -1,0 +1,47 @@
+header
+  .c-header-superior.d-none.d-md-block
+    .container
+      div.d-flex.justify-content-between.align-items-center
+        div.c-header-superior__contacto.d-flex
+          div
+            i.fab.fa-whatsapp
+            a(href="#") +51 99999999
+          div
+            i.far.fa-envelope
+            a(href="#") hola@sanitech.pe
+        div
+          ul.c-header-superior__link-iconos.d-flex.mb-0
+            li: a(href="#"): i.fab.fa-facebook-square
+            li: a(href="#"): i.fab.fa-instagram
+            li: a(href="#"): i.fab.fa-linkedin
+  .container: .row
+    div.col-12
+      .c-header-inferior.d-flex.justify-content-between.align-items-center.py-3
+        div.mx-auto.ml-md-0
+          a(href="./index.html"): img(src="../img/logo.svg", alt="logo sanitech" title="logo sanitech").img
+        div.d-none.d-md-block
+          nav.d-flex.align-items-center
+            ul.d-flex.align-items-center
+              li: a(href="./inicio.html").active Inicio
+              li: a(href="./nosotros.html") Nosotros
+              li: a(href="./producto.html") Productos
+              li: a(href="./servicios.html") Servicios
+              li: a(href="./blog.html") Blog
+              li: a(href="./contactanos.html").botones Contáctanos
+        div.menu-mobile.fixed-bottom.d-block.d-md-none
+          nav.navbar.navbar-expand-lg.fixed-bottom.navbar-dark.w-100.d-flex.justify-content-between.texto-center
+            ul.iconos-mobile.d-flex.justify-content-around.col-10
+              li: a(href="#"): i.fab.fa-whatsapp
+              li: a(href="#"): i.far.fa-envelope
+              li: a(href="#"): i.fas.fa-phone-square-alt
+            button.col-2.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+              i.fas.fa-bars
+            div.collapse.navbar-collapse#navbarNavAltMarkup
+              ul.navbar-nav.text-right.mx-3
+                //- li: a(href="#").nav-item.nav-link: span.sr-only(current)
+                li: a(href="./inicio.html").nav-item.nav-link.active Inicio
+                li: a(href="./nosotros.html").nav-item.nav-link Nosotros
+                li: a(href="./producto.html").nav-item.nav-link Productos
+                li: a(href="./servicios.html").nav-item.nav-link Servicios
+                li: a(href="./blog.html").nav-item.nav-link Blog
+                li: a(href="./contactanos.html").text-center.botones.nav-item.nav-link Contáctanos
