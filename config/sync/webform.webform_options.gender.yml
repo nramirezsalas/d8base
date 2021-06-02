@@ -1,5 +1,5 @@
-uuid: 561df2dc-9d1e-4f75-99d3-fce2378bb6c4
-langcode: es
+uuid: 50db7030-fd4f-4a86-97e0-c26d070e2cef
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: K8qTfK5-87DpwTQBkqhgTMR4P0Zz8Z9aNI7OnMlTb0Q
 id: gender
-label: Género
+label: Gender
 category: Demographic
 likert: false
 options: "Male: Male\nFemale: Female\n"

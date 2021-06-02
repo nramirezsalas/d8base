@@ -1,5 +1,5 @@
-uuid: daaa5164-03f9-42d1-bd68-2b16c5d2ac87
-langcode: es
+uuid: 50fd74af-0376-4674-b8d6-257f7b275716
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: YNrKbYrWWjeubUUM8AsQ19KnX7cU1elACR14CZJHmdg
 id: days
-label: Días
+label: Days
 category: 'Date and time'
 likert: false
 options: "Sunday: Sunday\nMonday: Monday\nTuesday: Tuesday\nWednesday: Wednesday\nThursday: Thursday\nFriday: Friday\nSaturday: Saturday\n"

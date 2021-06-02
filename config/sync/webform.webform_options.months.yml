@@ -1,5 +1,5 @@
-uuid: 2d6ea19b-ea57-4042-b39f-3d8cb35d036c
-langcode: es
+uuid: 3ef7db1e-e87a-4808-a730-a96465fd3c29
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: pZJnuQkh9afNML5IcMuKTUC__vmHMFn66Qr5IWtedZ4
 id: months
-label: Meses
+label: Months
 category: 'Date and time'
 likert: false
 options: "January: January\nFebruary: February\nMarch: March\nApril: April\nMay: May\nJune: June\nJuly: July\nAugust: August\nSeptember: September\nOctober: October\nNovember: November\nDecember: December\n"

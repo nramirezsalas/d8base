@@ -1,11 +1,11 @@
-uuid: 21510dcf-382e-4cb1-b493-abde45fdcdd8
-langcode: es
+uuid: a767faee-4ea5-4a3e-b1c7-23ece17e94b6
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: Y9NmnZHQq20ASSyTNA6JnwtWrJJiSajOehGDtmUFdM0
 name: medium
-label: 'Medio (220×220)'
+label: 'Medium (220×220)'
 effects:
   bddf0d06-42f9-4c75-a700-a33cafa25ea0:
     uuid: bddf0d06-42f9-4c75-a700-a33cafa25ea0

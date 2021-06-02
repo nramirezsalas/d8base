@@ -1,5 +1,5 @@
-uuid: e476015b-bae1-4d71-850d-2c71008cde8a
-langcode: es
+uuid: 8899256c-0eb5-4b25-a77e-3ac574d7ec86
+langcode: en
 status: true
 dependencies:
   config:
@@ -8,12 +8,12 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: Ay3b2hq42cpQTFB_lNu8S2ZxuVIY6-dlBsc7vLeJ-YY
+  default_config_hash: IjZnOLWk1Pjq3WRg2pLSA1ERh7Po7izCq_p6UztZr2c
 id: node.article.body
 field_name: body
 entity_type: node
 bundle: article
-label: Cuerpo
+label: Body
 description: ''
 required: false
 translatable: true

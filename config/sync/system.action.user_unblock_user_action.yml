@@ -1,5 +1,5 @@
-uuid: ef8567e1-1a56-4219-8b08-7b34ac2baa0c
-langcode: es
+uuid: f90a2f5b-550f-4655-9c69-eade8b463324
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: SPsUXsR3Rc8d1y3gewzaAKWa1ncea_ywXX3f7LTn7k0
 id: user_unblock_user_action
-label: 'Desbloquear a los usuarios seleccionados'
+label: 'Unblock the selected user(s)'
 type: user
 plugin: user_unblock_user_action
 configuration: {  }

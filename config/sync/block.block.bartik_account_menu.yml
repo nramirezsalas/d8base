@@ -1,5 +1,5 @@
-uuid: 84300001-6101-4cab-b2c9-5a5f753b8f23
-langcode: es
+uuid: 9e3fe9fc-a682-40ca-bd7b-12576a7726be
+langcode: en
 status: true
 dependencies:
   config:
@@ -18,7 +18,7 @@ provider: null
 plugin: 'system_menu_block:account'
 settings:
   id: 'system_menu_block:account'
-  label: 'Menú de cuenta de usuario'
+  label: 'User account menu'
   provider: system
   label_display: '0'
   level: 1

@@ -1,16 +1,16 @@
-uuid: 3865d79a-4a78-4101-8921-6c89868dd44b
-langcode: es
+uuid: 1eb5c80b-79f3-49e0-a9a7-13234f716dd6
+langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - user
 _core:
-  default_config_hash: BmeDSOTSaTVy5QLgxgJ5ye_ZseG5t88JXRP1apFoBkk
+  default_config_hash: 2J0rd5cWfFsdSX-kAb0f9EzvC0_vn4NxGlUpOQAXeOU
 id: block_content
-label: 'Biblioteca de bloques personalizados'
+label: 'Custom block library'
 module: views
-description: 'Encontrar y administrar bloques personalizados.'
+description: 'Find and manage custom blocks.'
 tag: default
 base_table: block_content_field_data
 base_field: id
@@ -54,8 +54,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ Anterior'
-            next: 'Siguiente >'
+            previous: '‹ Previous'
+            next: 'Next ›'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -121,7 +121,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Descripción del bloque'
+          label: 'Block description'
           exclude: false
           alter:
             alter_text: false
@@ -186,7 +186,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Tipo de bloque'
+          label: 'Block type'
           exclude: false
           alter:
             alter_text: false
@@ -251,7 +251,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Actualizado
+          label: Updated
           exclude: false
           alter:
             alter_text: false
@@ -365,7 +365,7 @@ display:
           exposed: true
           expose:
             operator_id: info_op
-            label: 'Descripción del bloque'
+            label: 'Block description'
             description: ''
             use_operator: false
             operator: info_op
@@ -407,7 +407,7 @@ display:
           exposed: true
           expose:
             operator_id: type_op
-            label: 'Tipo de bloque'
+            label: 'Block type'
             description: ''
             use_operator: false
             operator: type_op
@@ -478,7 +478,7 @@ display:
           entity_field: reusable
           plugin_id: boolean
       sorts: {  }
-      title: 'Biblioteca de bloques personalizados'
+      title: 'Custom block library'
       header: {  }
       footer: {  }
       empty:
@@ -491,7 +491,7 @@ display:
           admin_label: ''
           empty: true
           tokenize: false
-          content: 'No hay bloques personalizados disponibles.'
+          content: 'There are no custom blocks available.'
           plugin_id: text_custom
         block_content_listing_empty:
           admin_label: ''
@@ -514,7 +514,7 @@ display:
         - url
         - url.query_args
         - user.permissions
-      max-age: 0
+      max-age: -1
       tags: {  }
   page_1:
     display_plugin: page
@@ -526,7 +526,7 @@ display:
       path: admin/structure/block/block-content
       menu:
         type: tab
-        title: 'Biblioteca de bloques personalizados'
+        title: 'Custom block library'
         description: ''
         parent: block.admin_display
         weight: 0
@@ -539,5 +539,5 @@ display:
         - url
         - url.query_args
         - user.permissions
-      max-age: 0
+      max-age: -1
       tags: {  }

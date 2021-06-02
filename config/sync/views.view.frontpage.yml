@@ -1,5 +1,5 @@
-uuid: a3b5b17c-21a8-4eec-97d7-7197677a39ab
-langcode: es
+uuid: 57dd28c4-2361-4bc8-9488-8fc71938daf3
+langcode: en
 status: true
 dependencies:
   config:
@@ -9,11 +9,11 @@ dependencies:
     - node
     - user
 _core:
-  default_config_hash: ezK5Dw8P_4bqJdDQIiecSAJak9p1Wf1yDwHzTutGFuQ
+  default_config_hash: Xk6puCoRlHSJG8mU9Zg2iN4fbnzaw2dFolwMfpWxDSE
 id: frontpage
-label: 'Página principal'
+label: Frontpage
 module: node
-description: 'Todo el contenido promovido a la página principal.'
+description: 'All content promoted to the front page.'
 tag: default
 base_table: node_field_data
 base_field: nid
@@ -60,7 +60,7 @@ display:
           admin_label: ''
           label: ''
           empty: true
-          title: 'Bienvenido a [site:name]'
+          title: 'Welcome to [site:name]'
           plugin_id: title
       exposed_form:
         type: basic
@@ -184,8 +184,8 @@ display:
             offset: false
             offset_label: Offset
           tags:
-            previous: '‹ Anterior'
-            next: 'Siguiente >'
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« First'
             last: 'Last »'
           quantity: 9
@@ -260,7 +260,7 @@ display:
   feed_1:
     display_plugin: feed
     id: feed_1
-    display_title: Agregador
+    display_title: Feed
     position: 2
     display_options:
       sitename_title: true

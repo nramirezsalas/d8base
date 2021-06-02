@@ -1,11 +1,11 @@
-uuid: 5eabc864-d111-4fd5-8821-5648c307c9ae
-langcode: es
+uuid: 0f9867d9-6f59-4d2d-bae3-cb67de2868b9
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: btW6TFHajhy7Eo6YUvdFiPh4TcPggo8GBXYctjV6zag
 id: authenticated
-label: 'Usuario autenticado'
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
@@ -17,4 +17,3 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'use text format full_html'

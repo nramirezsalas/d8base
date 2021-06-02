@@ -1,5 +1,5 @@
-uuid: 10ae7ca0-a2e8-4030-a342-a9a84d2faa6d
-langcode: es
+uuid: 0244c617-8562-4c66-a639-b266df21c2be
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -8,7 +8,7 @@ dependencies:
 _core:
   default_config_hash: W88NYg31DbaVNQx1Uir_dwwXHVtF09QOq4VBGsH1Snk
 id: yes_no
-label: Sí/No
+label: Yes/No
 category: General
 likert: false
 options: "Yes: Yes\nNo: No\n"

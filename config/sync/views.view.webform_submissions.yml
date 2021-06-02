@@ -1,5 +1,5 @@
-uuid: 4b41f1a2-9628-465b-8d57-88bf93ed071c
-langcode: es
+uuid: 72cbfde1-9c71-475d-94c5-c49321b050ba
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -9,7 +9,7 @@ dependencies:
     - user
     - webform
 _core:
-  default_config_hash: _7B5YYODi_--G_tOWLcRmuuWsNsOFtDfntkEuwJWQq0
+  default_config_hash: YPgxGC8TmLtfCOLGCCHJcdH2llA7QksUkdi1abhB7Ro
 id: webform_submissions
 label: 'Webform submissions'
 module: views
@@ -177,7 +177,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nº
+          label: '#'
           exclude: false
           alter:
             alter_text: false
@@ -243,7 +243,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Borrador
+          label: Draft
           exclude: false
           alter:
             alter_text: false
@@ -775,7 +775,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nº
+          label: '#'
           exclude: false
           alter:
             alter_text: false
@@ -841,7 +841,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Borrador
+          label: Draft
           exclude: false
           alter:
             alter_text: false
@@ -1109,7 +1109,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completado
+          label: Completed
           exclude: false
           alter:
             alter_text: false
@@ -1586,7 +1586,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nº
+          label: '#'
           exclude: false
           alter:
             alter_text: false
@@ -1652,7 +1652,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Borrador
+          label: Draft
           exclude: false
           alter:
             alter_text: false
@@ -1920,7 +1920,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completado
+          label: Completed
           exclude: false
           alter:
             alter_text: false
@@ -2420,7 +2420,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Nº
+          label: '#'
           exclude: false
           alter:
             alter_text: false
@@ -2486,7 +2486,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Borrador
+          label: Draft
           exclude: false
           alter:
             alter_text: false
@@ -2754,7 +2754,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Completado
+          label: Completed
           exclude: false
           alter:
             alter_text: false

@@ -1,14 +1,14 @@
-uuid: 4ee2741c-f8a2-4d71-a52a-26fa16089397
-langcode: es
+uuid: 3fffa49d-8ce5-4923-9d37-b0b2bd564d12
+langcode: en
 status: true
 dependencies:
   module:
     - editor
 _core:
   default_config_hash: WNeK5FbcY8pXgEpbD_KgRzlF1-5PL3BJXwqaBctPTqw
-name: 'HTML completo'
+name: 'Full HTML'
 format: full_html
-weight: -10
+weight: 2
 filters:
   filter_align:
     id: filter_align
@@ -34,12 +34,3 @@ filters:
     status: true
     weight: 11
     settings: {  }
-  filter_html:
-    id: filter_html
-    provider: filter
-    status: false
-    weight: -10
-    settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol type start> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
-      filter_html_help: true
-      filter_html_nofollow: false

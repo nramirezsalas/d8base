@@ -1,15 +1,15 @@
-uuid: bbebfeea-0c3b-4438-b63e-cdc7bf5e8117
-langcode: es
+uuid: 392429af-ac4a-4ee9-9356-face750e988a
+langcode: en
 status: true
 dependencies:
   module:
     - user
 _core:
-  default_config_hash: wTJRNzsLVTenCALONNlVfgm_pBOlqucSPuVFLOD56ck
+  default_config_hash: J5EbGNdz0YUaSIYKwomyFSOtZjsV9TrBA3qdb3ZwBS0
 id: user_admin_people
-label: Usuarios
+label: People
 module: user
-description: 'Encontrar y gestionar qué personas interactúan con su sitio.'
+description: 'Find and manage people interacting with your site.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -52,8 +52,8 @@ display:
           id: 0
           total_pages: 0
           tags:
-            previous: '‹ Anterior'
-            next: 'Siguiente >'
+            previous: '‹ Previous'
+            next: 'Next ›'
             first: '« First'
             last: 'Last »'
           expose:
@@ -148,7 +148,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Actualización masiva'
+          label: 'Bulk update'
           exclude: false
           alter:
             alter_text: false
@@ -198,7 +198,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Nombre de usuario'
+          label: Username
           exclude: false
           alter:
             alter_text: false
@@ -250,7 +250,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Estado
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -295,8 +295,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Activo
-            format_custom_false: Bloqueado
+            format_custom_true: Active
+            format_custom_false: Blocked
           entity_type: user
           entity_field: status
         roles_target_id:
@@ -357,7 +357,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Miembro desde hace'
+          label: 'Member for'
           exclude: false
           alter:
             alter_text: false
@@ -413,7 +413,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Último acceso'
+          label: 'Last access'
           exclude: false
           alter:
             alter_text: false
@@ -591,7 +591,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: 'El nombre o correo electrónico contiene'
+            label: 'Name or email contains'
             description: ''
             use_operator: false
             operator: combine_op
@@ -650,7 +650,7 @@ display:
             operator_list: {  }
           is_grouped: true
           group_info:
-            label: Estado
+            label: Status
             description: ''
             identifier: status
             optional: true
@@ -661,11 +661,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Activo
+                title: Active
                 operator: '='
                 value: '1'
               2:
-                title: Bloqueado
+                title: Blocked
                 operator: '='
                 value: '0'
           plugin_id: boolean
@@ -684,7 +684,7 @@ display:
           exposed: true
           expose:
             operator_id: roles_target_id_op
-            label: Rol
+            label: Role
             description: ''
             use_operator: false
             operator: roles_target_id_op
@@ -726,7 +726,7 @@ display:
           exposed: true
           expose:
             operator_id: permission_op
-            label: Permiso
+            label: Permission
             description: ''
             use_operator: false
             operator: permission_op
@@ -853,7 +853,7 @@ display:
           plugin_id: date
           entity_type: user
           entity_field: created
-      title: Usuarios
+      title: People
       empty:
         area_text_custom:
           id: area_text_custom
@@ -868,7 +868,7 @@ display:
           plugin_id: text_custom
       use_more: false
       use_more_always: false
-      use_more_text: más
+      use_more_text: more
       display_comment: ''
       use_ajax: false
       hide_attachment_summary: false
@@ -901,15 +901,15 @@ display:
       show_admin_links: false
       menu:
         type: 'default tab'
-        title: Lista
-        description: 'Encontrar y gestionar qué personas interactúan con su sitio.'
+        title: List
+        description: 'Find and manage people interacting with your site.'
         menu_name: admin
         weight: -10
         context: ''
       tab_options:
         type: normal
-        title: Usuarios
-        description: 'Gestionar cuentas, roles y permisos de usuarios.'
+        title: People
+        description: 'Manage user accounts, roles, and permissions.'
         menu_name: admin
         weight: 0
       defaults:

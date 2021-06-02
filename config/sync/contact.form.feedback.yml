@@ -1,13 +1,13 @@
-uuid: fd0208c4-42f6-485c-9c99-fd72454795f4
-langcode: es
+uuid: 4d013a43-5047-4c32-a10f-9f6c8d1a8c85
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
 id: feedback
-label: 'Comentarios sobre el sitio web'
+label: 'Website feedback'
 recipients:
-  - ramirezsalasnestor@gmail.com
+  - nestor@gabuteau.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

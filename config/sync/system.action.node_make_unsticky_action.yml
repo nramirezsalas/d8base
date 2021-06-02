@@ -1,5 +1,5 @@
-uuid: 360d2f49-9dba-49f7-b2ef-878be18f535e
-langcode: es
+uuid: 71e30367-7a38-4cc3-90c5-b653a3f1f70c
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: lDM9mvIGAu8Sw8rt-uCO4Sr7yX5VPrDPxYcawkbKd6k
 id: node_make_unsticky_action
-label: 'Hacer que el contenido no sea fijo al principio de las listas'
+label: 'Make content unsticky'
 type: node
 plugin: node_make_unsticky_action
 configuration: {  }

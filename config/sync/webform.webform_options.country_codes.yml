@@ -1,5 +1,5 @@
-uuid: bb0607c7-50eb-4ae2-852f-57005e1566f5
-langcode: es
+uuid: 0a500257-1001-43df-8ba0-5d1050a995e5
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -9,6 +9,6 @@ _core:
   default_config_hash: adQ16YGDPk7QfUKrfrC35o2sKdHEozdNtdpiH7CftQQ
 id: country_codes
 label: 'Country codes'
-category: Geográfico
+category: Geographic
 likert: false
 options: ''

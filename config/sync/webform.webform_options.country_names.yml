@@ -1,5 +1,5 @@
-uuid: 8d51ef9f-885c-49c1-b6c9-d6d1511a3705
-langcode: es
+uuid: aaaa5a5a-338c-4692-893c-8b18a5565135
+langcode: en
 status: true
 dependencies:
   enforced:
@@ -9,6 +9,6 @@ _core:
   default_config_hash: zsfFP124dAM-sJkuEfnwaA7DN6o3-IsaXLgdNmObbYg
 id: country_names
 label: 'Country names'
-category: Geográfico
+category: Geographic
 likert: false
 options: ''

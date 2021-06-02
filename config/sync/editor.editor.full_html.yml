@@ -1,19 +1,11 @@
-uuid: a24333ff-cdb4-4cb8-8d0f-76b037579260
-langcode: es
+uuid: d149cac3-c339-4dde-a11a-76b4d5865ba6
+langcode: en
 status: true
 dependencies:
   config:
     - filter.format.full_html
   module:
     - ckeditor
-    - editor_file
-third_party_settings:
-  editor_file:
-    status: true
-    scheme: public
-    directory: files
-    extensions: 'txt pdf doc docx xls xlsx ppt pptx zip rar mp3 mp4'
-    max_size: '10 MB'
 _core:
   default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
 format: full_html
@@ -27,18 +19,11 @@ settings:
           items:
             - Bold
             - Italic
-            - Underline
-            - '-'
+            - Strike
             - Superscript
             - Subscript
+            - '-'
             - RemoveFormat
-        -
-          name: Align
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-            - JustifyBlock
         -
           name: Linking
           items:
@@ -54,8 +39,6 @@ settings:
           items:
             - Blockquote
             - DrupalImage
-            - ImceImage
-            - DrupalFile
             - Table
             - HorizontalRule
         -
@@ -66,35 +49,15 @@ settings:
           name: Tools
           items:
             - ShowBlocks
-            - Maximize
             - Source
   plugins:
     stylescombo:
       styles: ''
-    language:
-      language_list: un
-    codemirror:
-      enable: true
-      startupMode: wysiwyg
-      mode: htmlmixed
-      theme: default
-      options:
-        lineNumbers: true
-        lineWrapping: true
-        matchBrackets: true
-        autoCloseTags: true
-        autoCloseBrackets: true
-        enableSearchTools: true
-        enableCodeFolding: true
-        enableCodeFormatting: true
-        autoFormatOnStart: true
-        autoFormatOnModeChange: true
-        autoFormatOnUncomment: true
 image_upload:
   status: true
   scheme: public
-  directory: images
-  max_size: '10 MB'
+  directory: inline-images
+  max_size: ''
   max_dimensions:
-    width: null
-    height: null
+    width: 0
+    height: 0

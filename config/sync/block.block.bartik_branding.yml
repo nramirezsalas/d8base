@@ -1,5 +1,5 @@
-uuid: 23c0fb6a-2b6a-4b1d-8a80-22e580728598
-langcode: es
+uuid: 589ab1a5-5639-4c38-8dec-03a451d4d9df
+langcode: en
 status: true
 dependencies:
   module:
@@ -16,7 +16,7 @@ provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Marca del sitio'
+  label: 'Site branding'
   provider: system
   label_display: '0'
   use_site_logo: true
